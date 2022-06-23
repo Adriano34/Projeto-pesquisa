@@ -26,6 +26,12 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/?pagina=empresas&acao=criar">Criar empresas</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/?pagina=itens&acao=criar">Criar Itens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/?pagina=itens">Listar Itens</a>
+            </li>
           </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="buscar">
