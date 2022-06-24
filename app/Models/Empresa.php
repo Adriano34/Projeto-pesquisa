@@ -54,5 +54,19 @@ class Empresa {
     public function setMunicipioId($municipio_id) {
         $this->municipio_id = $municipio_id;
     }
+
+    public function getCriadoEm() {
+        return $this->criado_em;
+    }
+    public function setCriadoEm($criado_em) {
+        $this->criado_em = $criado_em;
+    }
+
+    public function getAtualizadoEm() {
+        return $this->atualizado_em;
+    }
+    public function setAtualizadoEm($atualizado_em) {
+        $this->atualizado_em = $atualizado_em;
+    }
 }
 

@@ -6,48 +6,46 @@ use App\Models\Empresa;
 class EmpresaDao {
     public function create(Empresa $empresa) {
 
-        $sql = 'INSERT INTO empresas (nome, telefone, uf, site, municipio, criado_em, atualizado_em) 
-            VALUES (?,?,?,?,?,?,?)';
-
-        $stmt = Conexao::getConnn()->prepare($sql);
-        $stmt->bindValue(1, $e->getNome());
-        $stmt->bindValue(2, $e->getTelefone());
-        $stmt->bindValue(3, $e->getSite());
-        $stmt->bindValue(4, $e->getUf());
-        $stmt->bindValue(5, $e->getMunicipio());
-        $stmt->bindValue(6, $e->getCriadoEm());
-        $stmt->bindValue(7, $e->getAtualizadoEm());
-
-        $stmt->execute();
-
-    }
     }
 
     public function read() {
 
-        $sql = 'SELECT * FROM  empresas';
+        $sql = 'SELECT * FROM empresas';
 
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->exeute();
+        $stmt->execute();
 
-        if ($stmt->rowCount() > 0):
-            $resultado = $stmt->fetchall(\PDO::FETCH_ASSSOC);
+        if($stmt->rowCount() > 0):
+            $resultado = $stmt->fetchall(\PDO::FETCH_ASSOC);
             return $resultado;
         else:
-            return[]
+            return[];
         endif;
     }
 
     public function update(Empresa $empresa) {
-        $sql = 'UPDATE empresas SET nome = ?, descricao = ? WHERE id = ?';
+        $sql = 'UPDATE empresas SET nome = ?, telefone = ?, site = ?, uf = ?, 
+        municipio = ?, atualiazado_em = ? WHERE id = ?';
 
         $stmt = Conexao::getConn()->prepare($slq);
-        $stmt->bindValue(1)
+        $stmt->bindValue(1, $empresa->getNome());
+        $stmt->bindValue(2, $empresa->getTelefone());
+        $stmt->bindValue(3, $empresa->getSite());
+        $stmt->bindValue(4, $empresa->getUf());
+        $stmt->bindValue(5, $empresa->getMunicipio());
+        $stmt->bindValue(6, $empresa->getAtualizadoEm());
+        $stmt->bindValue(7, $empresa->getId());
 
+        $stmt->execute();
         
     }
 
     public function delete($id) {
 
-    }
+        $sql = 'DELETE * FROM empresas WHERE id = ?';
 
+        $stmt = Conexao::getConn()->prepare(sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
+}

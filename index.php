@@ -14,3 +14,5 @@ if (!method_exists($app, $acao)) {
 }
 
 $app->$acao();
+$EmpresaDao = new \App\model\EmpresaDao();
+$EmpresaDao->create($empresa);

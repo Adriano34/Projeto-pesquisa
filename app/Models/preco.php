@@ -9,7 +9,7 @@ class Preco {
     private $uf;
     private $criado_em;
     private $atualizado_em;
-    private $formulario;
+    private $formulario_id;
     private $item_id;
 
     public function getId() {
