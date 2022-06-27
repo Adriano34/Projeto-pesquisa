@@ -2,32 +2,53 @@
 
 namespace App\Dao;
 use App\Models\Item;
+use App\Database\Conexao;
 
 class ItemDao {
     public function create(Item $item){
 
-    }
+        $sql = 'INSERT INTO itens (nome, descricao, unidade_medida, tipo) VALUES (?, ?, ?, ?)';
 
-    public function read() {
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $item->getNome());
+        $stmt->bindValue(2, $item->getDescricao());
+        $stmt->bindValue(3, $item->getUnidadeMedida());
+        $stmt->bindValue(4, $item->getTipo());
 
-        $sql ='SELECT * FROM  itens';
-
-        $Stmt = Conexao::getConn()->prepare($sql);
         $stmt->execute();
 
-        if($stmt->rowCount() > 0):
-            $resultado = $stmt->fetchall(\PDO::FETCH_ASSOC);
-            return $resultado;
-    else:
-        return[];
-    endif;
+    }
 
+    public function listarTodos() {
+
+        $sql = 'SELECT * FROM itens';
+
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->execute();
+
+        $resultado = $stmt->fetchall(\PDO::FETCH_CLASS, Item::class);
+        return $resultado;
+        
+    }
+
+    public function listarPorId($id) {
+
+        $sql = 'SELECT * FROM itens WHERE id = ?';
+
+        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_CLASS, Item::class);
+        $resultado = $stmt->fetch();
+        return $resultado;
+        
     }
 
     public function update(Item $item) {
 
-        $sql = 'UPDATE itens SET nome = ?, nome = ?, 
-        descricao = ?, unidade_medida = ?, tipo = ?';
+        $sql = 'UPDATE itens SET nome = ?, 
+        descricao = ?, unidade_medida = ?, tipo = ? WHERE id = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $item->getNome());
@@ -42,7 +63,7 @@ class ItemDao {
 
     public function delete($id) {
 
-        $sql = 'DELETE * FROM itens WHERE id = ?';
+        $sql = 'DELETE FROM itens WHERE id = ?';
 
         $stmt = Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $id);
