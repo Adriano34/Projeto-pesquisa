@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
+    <title>Pesquisa de preços</title>
   </head>
   <body>
     <!-- Example Code -->
@@ -21,16 +21,16 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/?pagina=empresas">Empresas</a>
+              <a class="nav-link" aria-current="page" href="/empresas">Empresas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/?pagina=empresas&acao=criar">Criar empresas</a>
+              <a class="nav-link" aria-current="page" href="/empresas/criar">Criar empresas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/?pagina=itens&acao=criar">Criar Itens</a>
+              <a class="nav-link" aria-current="page" href="/itens/criar">Criar Itens</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/?pagina=itens">Listar Itens</a>
+              <a class="nav-link" aria-current="page" href="/itens">Listar Itens</a>
             </li>
           </ul>
             <form class="d-flex" role="search">

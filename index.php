@@ -1,7 +1,11 @@
 <?php
 
-$pagina = isset($_GET['pagina']) ? $_GET['pagina'] : 'index';
-$acao = isset($_GET['acao']) ? $_GET['acao'] : 'index';
+$path = $_SERVER['PATH_INFO'] ?? '/index';
+
+$path = explode('/', $path);
+
+$pagina = $path[1] ?? 'index';
+$acao = $path[2] ?? 'index';
 
 require 'vendor/autoload.php';
 

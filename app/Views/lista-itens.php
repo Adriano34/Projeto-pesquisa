@@ -17,9 +17,9 @@
             <td> <?= $item->getId(); ?></td>
             <td> <?= $item->getNome(); ?></td>
             <td> <?= $item->getUnidadeMedida(); ?></td>
-            <td> <?= $item->getTipo();?></td>
+            <td> <?= $item->getTipo(); ?></td>
             <td>
-              <a href="/?pagina=itens&acao=editar&id=<?= $item->getId(); ?>" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Editar</a>
+              <a href="/itens/editar?id=<?= $item->getId(); ?>" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Editar</a>
             </td>
           </tr>
         <?php endforeach;?>

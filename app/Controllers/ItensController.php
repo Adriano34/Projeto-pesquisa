@@ -30,10 +30,22 @@ class ItensController extends Controller
 
        header("Location:/?pagina=itens");
     }
+
     public function editar()
     {
-        $itemdao = new ItemDao();
-        $item = $itemdao->listarPorId($_GET['id']);
-        $this->view('formulario-item', compact('item'));
+        if (isset($_GET['id'])) {
+            $itemdao = new ItemDao();
+
+            $id = $_GET['id'];
+            $item = $itemdao->listarPorId($id);
+
+            if (!empty($item)) {
+                $this->view('formulario-item', compact('item'));
+            } else {
+                echo 'Item não encontrado!';
+            }
+        } else {
+            echo 'É necessário informar o ID para esta operação!';
+        }
     }
 }
