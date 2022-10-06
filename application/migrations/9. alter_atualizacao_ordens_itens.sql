@@ -1,0 +1,20 @@
+update itens set ordem = 1 where id = 1
+update itens set ordem = 2 where id = 7
+update itens set ordem = 3 where id = 8
+update itens set ordem = 4 where id = 2
+update itens set ordem = 5 where id = 3
+update itens set ordem = 6 where id = 19
+update itens set ordem = 7 where id = 20
+update itens set ordem = 8 where id = 5
+update itens set ordem = 9 where id = 6
+update itens set ordem = 10 where id = 9
+update itens set ordem = 11 where id = 10
+
+update itens set ordem = 1 where id = 11
+update itens set ordem = 2 where id = 12
+update itens set ordem = 3 where id = 13
+update itens set ordem = 4 where id = 14
+update itens set ordem = 5 where id = 15
+update itens set ordem = 7 where id = 16
+update itens set ordem = 8 where id = 17
+update itens set ordem = 9 where id = 18

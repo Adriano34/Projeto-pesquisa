@@ -1,0 +1,1 @@
+ALTER TABLE pesquisadeprecos.precos MODIFY COLUMN comercializa varchar(3) DEFAULT 'Não' NULL;

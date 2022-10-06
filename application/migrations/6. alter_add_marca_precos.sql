@@ -1,0 +1,1 @@
+alter table precos add column marca varchar(50);

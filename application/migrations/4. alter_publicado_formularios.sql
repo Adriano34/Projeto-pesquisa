@@ -1,0 +1,1 @@
+ALTER TABLE pesquisadeprecos.formularios MODIFY COLUMN publicado VARCHAR(3) DEFAULT 'Não' NULL;

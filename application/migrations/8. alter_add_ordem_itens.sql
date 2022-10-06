@@ -1,0 +1,1 @@
+alter table itens add ordem integer default 0;

@@ -1,0 +1,1 @@
+alter table precos add column observacoes varchar(255);
